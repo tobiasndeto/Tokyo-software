@@ -1,0 +1,335 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Evoting System</title>
+    <link rel="shortcut icon" href="{% static 'assets/images/logo.png' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;display=swap"
+          rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'assets/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-xl big-padding">
+    <div class="row section-title">
+        <h2 class="fs-4">Evoting Sytem</h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-6">
+            <form method="post">
+                {% csrf_token %}
+                <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
+                    <img class="rounded-pill shadow-md p-2" src="{% static 'assets/images/testimonial/member-01.jpg' %}"
+                         alt="">
+                    <h4 class="mt-3 fs-5 mb-1 fw-bold" style="color: black">James</h4>
+                    <input type="hidden" name="name" value="James">
+                    <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">President</span></h6>
+                    <input type="hidden" name="position" value="President">
+                    <p class="text-dark mt-3 mb-3 fs-8">Aliquam utrum nibh rutrum nibh vitae tortor dapibus egestas.
+                        Cras
+                        condimentum dapibus tellus vel semper. Quisque vel dui molestie est auctor utrum nibh
+                        porttitor.</p>
+                    <button class="btn btn-danger fw-bolder px-4 ms-2 fs-8" name="btnvote" value="president">Vote
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <form method="post">
+                {% csrf_token %}
+                <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
+                    <img class="rounded-pill shadow-md p-2" src="{% static 'assets/images/testimonial/member-03.jpg' %}"
+                         alt="">
+                    <h4 class="mt-3 fs-5 mb-1 fw-bold" style="color: black">Pream</h4>
+                    <input type="hidden" name="name" value="Pream">
+                    <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">Vice President</span></h6>
+                    <input type="hidden" name="position" value="Vice President">
+                    <p class="text-dark mt-3 mb-3 fs-8">Aliquam utrum nibh rutrum nibh vitae tortor dapibus egestas.
+                        Cras
+                        condimentum dapibus tellus vel semper. Quisque vel dui molestie est auctor utrum nibh
+                        porttitor.</p>
+                    <button class="btn btn-danger fw-bolder px-4 ms-2 fs-8" name="btnvote" value="vice_president">Vote
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <form method="post">
+                {% csrf_token %}
+                <div class="text-white text-center mb-4 votcard shadow-md bg-white p-4 pt-5">
+                    <img class="rounded-pill shadow-md p-2" src="{% static 'assets/images/testimonial/member-04.jpg' %}"
+                         alt="">
+                    <h4 class="mt-3 fs-5 mb-1 fw-bold" style="color: black">Reena </h4>
+                    <input type="hidden" name="name" value="Reena">
+                    <h6 class="fs-7">Runnung to Be: <span class="text-primary fw-bold">Senator</span></h6>
+                    <input type="hidden" name="position" value="Sentor">
+                    <p class="text-dark mt-3 mb-3 fs-8">Aliquam utrum nibh rutrum nibh vitae tortor dapibus egestas.
+                        Cras
+                        condimentum dapibus tellus vel semper. Quisque vel dui molestie est auctor utrum nibh
+                        porttitor.</p>
+                    <button class="btn btn-danger fw-bolder px-4 ms-2 fs-8" name="btnvote" value="senator">Vote</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal manifesto -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-6 fw-bold fs-5" id="exampleModalLabel">View Manifesto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="molist">
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu nibh et
+                        felis
+                        interdum
+                        accumsan. Pellentesque elit odio, interdum quis ante in, varius rhoncus
+                        orci.
+                    </li>
+                    <li>Etiam laoreet dapibus ante at mollis. Morbi lobortis ultricies risus, in
+                        faucibus
+                        est blandit
+                        eu. Nunc nec imperdiet elit.
+                    </li>
+                    <li>Praesent eget massa finibus, placerat tortor sed, pretium justo. Aenean et
+                        lectus
+                        accumsan,
+                        tincidunt metus sit amet, laoreet nunc.
+                    </li>
+                    <li>In et tincidunt est. Sed neque sapien, ultricies a orci et, fringilla
+                        egestas
+                        nibh.
+                        Sed luctus
+                        eros et erat suscipit fermentum.
+                    </li>
+                    <li>Cras blandit orci quis purus placerat tincidunt. Nunc ullamcorper iaculis
+                        nibh,
+                        sed
+                        dapibus dui
+                        lobortis nec.
+                    </li>
+                    <li>Sed tristique ante ac rhoncus facilisis. Maecenas hendrerit velit a interdum
+                        convallis. Vivamus
+                        tempus eu justo nec rutrum. Praesent sollicitudin interdum nisl, at
+                        sollicitudin
+                        justo interdum
+                        vel
+                    </li>
+                    <li>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                        ac
+                        turpis
+                        egestas.
+                        Nunc eget orci maximus, tincidunt nulla molestie, porta nisi. Integer
+                        fringilla
+                        lorem at lacinia
+                        iaculis.
+                    </li>
+                    <li>Maecenas tempus libero laoreet est facilisis, vitae iaculis dui eleifend.
+                        Proin
+                        eget
+                        magna vitae
+                        diam dictum interdum at at nulla. Fusce eu porttitor felis. Aenean pretium
+                        lacinia
+                        nunc ut
+                        convallis.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-6 fw-bold fs-5" id="exampleModalLabel">View Manifesto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="molist">
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu nibh et felis interdum
+                        accumsan. Pellentesque elit odio, interdum quis ante in, varius rhoncus orci.
+                    </li>
+                    <li>Etiam laoreet dapibus ante at mollis. Morbi lobortis ultricies risus, in faucibus est blandit
+                        eu. Nunc nec imperdiet elit.
+                    </li>
+                    <li>Praesent eget massa finibus, placerat tortor sed, pretium justo. Aenean et lectus accumsan,
+                        tincidunt metus sit amet, laoreet nunc.
+                    </li>
+                    <li>In et tincidunt est. Sed neque sapien, ultricies a orci et, fringilla egestas nibh. Sed luctus
+                        eros et erat suscipit fermentum.
+                    </li>
+                    <li>Cras blandit orci quis purus placerat tincidunt. Nunc ullamcorper iaculis nibh, sed dapibus dui
+                        lobortis nec.
+                    </li>
+                    <li>Sed tristique ante ac rhoncus facilisis. Maecenas hendrerit velit a interdum convallis. Vivamus
+                        tempus eu justo nec rutrum. Praesent sollicitudin interdum nisl, at sollicitudin justo interdum
+                        vel
+                    </li>
+                    <li>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        Nunc eget orci maximus, tincidunt nulla molestie, porta nisi. Integer fringilla lorem at lacinia
+                        iaculis.
+                    </li>
+                    <li>Maecenas tempus libero laoreet est facilisis, vitae iaculis dui eleifend. Proin eget magna vitae
+                        diam dictum interdum at at nulla. Fusce eu porttitor felis. Aenean pretium lacinia nunc ut
+                        convallis.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-6 fw-bold fs-5" id="exampleModalLabel">View Manifesto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="molist">
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu nibh et felis interdum
+                        accumsan. Pellentesque elit odio, interdum quis ante in, varius rhoncus orci.
+                    </li>
+                    <li>Etiam laoreet dapibus ante at mollis. Morbi lobortis ultricies risus, in faucibus est blandit
+                        eu. Nunc nec imperdiet elit.
+                    </li>
+                    <li>Praesent eget massa finibus, placerat tortor sed, pretium justo. Aenean et lectus accumsan,
+                        tincidunt metus sit amet, laoreet nunc.
+                    </li>
+                    <li>In et tincidunt est. Sed neque sapien, ultricies a orci et, fringilla egestas nibh. Sed luctus
+                        eros et erat suscipit fermentum.
+                    </li>
+                    <li>Cras blandit orci quis purus placerat tincidunt. Nunc ullamcorper iaculis nibh, sed dapibus dui
+                        lobortis nec.
+                    </li>
+                    <li>Sed tristique ante ac rhoncus facilisis. Maecenas hendrerit velit a interdum convallis. Vivamus
+                        tempus eu justo nec rutrum. Praesent sollicitudin interdum nisl, at sollicitudin justo interdum
+                        vel
+                    </li>
+                    <li>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        Nunc eget orci maximus, tincidunt nulla molestie, porta nisi. Integer fringilla lorem at lacinia
+                        iaculis.
+                    </li>
+                    <li>Maecenas tempus libero laoreet est facilisis, vitae iaculis dui eleifend. Proin eget magna vitae
+                        diam dictum interdum at at nulla. Fusce eu porttitor felis. Aenean pretium lacinia nunc ut
+                        convallis.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-6 fw-bold fs-5" id="exampleModalLabel">View Manifesto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="molist">
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu nibh et felis interdum
+                        accumsan. Pellentesque elit odio, interdum quis ante in, varius rhoncus orci.
+                    </li>
+                    <li>Etiam laoreet dapibus ante at mollis. Morbi lobortis ultricies risus, in faucibus est blandit
+                        eu. Nunc nec imperdiet elit.
+                    </li>
+                    <li>Praesent eget massa finibus, placerat tortor sed, pretium justo. Aenean et lectus accumsan,
+                        tincidunt metus sit amet, laoreet nunc.
+                    </li>
+                    <li>In et tincidunt est. Sed neque sapien, ultricies a orci et, fringilla egestas nibh. Sed luctus
+                        eros et erat suscipit fermentum.
+                    </li>
+                    <li>Cras blandit orci quis purus placerat tincidunt. Nunc ullamcorper iaculis nibh, sed dapibus dui
+                        lobortis nec.
+                    </li>
+                    <li>Sed tristique ante ac rhoncus facilisis. Maecenas hendrerit velit a interdum convallis. Vivamus
+                        tempus eu justo nec rutrum. Praesent sollicitudin interdum nisl, at sollicitudin justo interdum
+                        vel
+                    </li>
+                    <li>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        Nunc eget orci maximus, tincidunt nulla molestie, porta nisi. Integer fringilla lorem at lacinia
+                        iaculis.
+                    </li>
+                    <li>Maecenas tempus libero laoreet est facilisis, vitae iaculis dui eleifend. Proin eget magna vitae
+                        diam dictum interdum at at nulla. Fusce eu porttitor felis. Aenean pretium lacinia nunc ut
+                        convallis.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-6 fw-bold fs-5" id="exampleModalLabel">View Manifesto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="molist">
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu nibh et felis interdum
+                        accumsan. Pellentesque elit odio, interdum quis ante in, varius rhoncus orci.
+                    </li>
+                    <li>Etiam laoreet dapibus ante at mollis. Morbi lobortis ultricies risus, in faucibus est blandit
+                        eu. Nunc nec imperdiet elit.
+                    </li>
+                    <li>Praesent eget massa finibus, placerat tortor sed, pretium justo. Aenean et lectus accumsan,
+                        tincidunt metus sit amet, laoreet nunc.
+                    </li>
+                    <li>In et tincidunt est. Sed neque sapien, ultricies a orci et, fringilla egestas nibh. Sed luctus
+                        eros et erat suscipit fermentum.
+                    </li>
+                    <li>Cras blandit orci quis purus placerat tincidunt. Nunc ullamcorper iaculis nibh, sed dapibus dui
+                        lobortis nec.
+                    </li>
+                    <li>Sed tristique ante ac rhoncus facilisis. Maecenas hendrerit velit a interdum convallis. Vivamus
+                        tempus eu justo nec rutrum. Praesent sollicitudin interdum nisl, at sollicitudin justo interdum
+                        vel
+                    </li>
+                    <li>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        Nunc eget orci maximus, tincidunt nulla molestie, porta nisi. Integer fringilla lorem at lacinia
+                        iaculis.
+                    </li>
+                    <li>Maecenas tempus libero laoreet est facilisis, vitae iaculis dui eleifend. Proin eget magna vitae
+                        diam dictum interdum at at nulla. Fusce eu porttitor felis. Aenean pretium lacinia nunc ut
+                        convallis.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+{#    <script src="{% static 'assets/js/popper.min.js' %}"></script>#}
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+<script src="{% static 'assets/plugins/testimonial/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/script.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</html>
